@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+        function check()
+        {
+            var x = document.forms["reset"]["username"].value;
+            var y = document.forms["reset"]["seckey"].value;
+            if(x == "" && y == "")
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        function validate()
+        {
+            var x = document.forms["pass"]["password"].value;
+            var y = document.forms["pass"]["passw"].value;
+            if(x == y)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+<!--    custom css-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+      <title>Reset Your Password</title>
+  </head>
+  <body class="bg-nav">
+  <nav class="navbar bg-nav">
+    <a href="#" class="navbar-brand text-light">TelStore</a>
+  </nav>
+  <div class="row">
+    <div class="col-md-4 mt-300">
+      <div class="card">
+        <div class="card-body">
+            {%if status%}
+          <form name="reset" class="form" action="reset.html" onsubmit="return check()">
+            <h2 align="center"><strong>Verify</strong></h2>
+            <input type="text" id="username" name="username" class="form-control" placeholder="username" ><br>
+              <p align="center"> OR </p>
+            <input type="password" id="key" name="seckey" class="form-control" placeholder="Security Key"  ><br>
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="submit" >
+          </form>
+            {%else%}
+            <form name="pass" action="resetpass" method="post" class="form" onsubmit="return validate()">
+            <input type="password" id="pass1" name="password" class="form-control" placeholder="Password" required ><br>
+            <input type="password" id="pass2" name="passw" class="form-control" placeholder="Re-Type password" required ><br>
+             <input type="submit" class="btn btn-primary btn-block btn-lg" value="submit" >
+            {%endif%}
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

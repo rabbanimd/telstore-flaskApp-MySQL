@@ -1,0 +1,30 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.bg-nav{
+    background: #FFA17F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00223E, #FFA17F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00223E, #FFA17F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.mt-300{
+    margin-top:250px;
+}
+.mt-150{
+    margin-left: 30px;
+    margin-top: 150px;
+    padding-bottom: 30px;
+}
+.label{
+    font-size: 20px;
+    font-weight:normal;
+}
+.footer{
+    float: left;
+    padding-bottom : 0px;
+
+}
+.flt-foot{
+    float right;
+    text-align:center;
+}

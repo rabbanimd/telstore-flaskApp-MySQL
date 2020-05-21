@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Update Record</title>
+        <link  rel="stylesheet" href="{{url_for('static',filename='dist/css/styles.css')}}" />
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>-->
+    </head>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Update</h3></div>
+                                    <div class="card-body">
+                                        {%for x in data%}
+                                        <form action='/updateContact/{{id}}' method="post">
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputFirstName">Name<span color="red">*</span></label><input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter Name" name="name" value="{{x.name}}" /></div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="title">Title</label><input class="form-control py-4" id="title" type="text" placeholder="Title/Nickname" name="title"  value="{{x.title}}"/></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputFirstphone">Primary Phone Number<span color="red">*</span></label><input class="form-control py-4" id="inputFirstphone" type="text" placeholder="Phone Number" name="phone1" value="{{x.phone1}}" /></div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="phone2">Secondary Phone</label><input class="form-control py-4" id="phone2" type="text" placeholder="Phone Number" name="phone2" value="{{x.phone2}}" /></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" value="{{x.email}}" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputAddress">Addres</label><input class="form-control py-4" id="inputAddress" type="text" placeholder="Enter Residential address" name="address" value="{{x.address}}" /></div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputweb">website</label><input class="form-control py-4" id="inputweb" type="text" placeholder="Website" name="website" value="{{x.website}}" /></div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputCompany">Company</label><input class="form-control py-4" id="inputCompany" type="text" placeholder="Company Name" name="company" value="{{x.company}}" /></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group"><label class="small mb-1" for="group">Choose group</label><select class="form-control" id="group" name="group">
+                                                    {%for g in grp%}
+                                                        {%if g==''%}
+                                                            <option value="{{x.groups}}">{{x.groups}}</option>
+                                                        {%else%}
+                                                            <option value="{{g}}">{{g}}</option>{%endif%}
+                                                        {%endfor%}
+                                                </select></div>
+                                            </div>
+                                            <div class="form-group mt-4 mb-0"><input type="submit" class="btn btn-primary btn-block" value="update"/></div>
+                                        </form>
+                                        {%endfor%}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

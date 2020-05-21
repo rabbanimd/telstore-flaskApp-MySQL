@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" >
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+<!--    custom css-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+    <title>TelStore</title>
+  </head>
+  <body class="bg-nav">
+  <nav class="navbar bg-nav">
+    <a href="#" class="navbar-brand text-light">TelStore</a>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+    <div class="col-md-5 mt-300">
+      <div class="shadow-lg p-3 mb-5 rounded">
+      <div class="card">
+        <div class="card-body">
+
+          <form name="login-frm" class="form" action="/login" method="post">
+            <h2 align="center"><strong>login</strong></h2>
+            <input type="text" id="username" name="username" class="form-control" placeholder="username" required ><br>
+            <input type="password" id="password" name="password" class="form-control" placeholder="password" required ><br>
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="login" >
+          </form>
+          <div class="card-footer text-center">
+              <div class="small"><a href='/reset'>Forgot password? Reset it now</a></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-5 mt-150">
+      <div class="shadow-lg p-3 mb-5 rounded">
+      <div class="card">
+        <div class="card-body">
+          <form name="signup-frm" class="form" action="/add" method="post" onsubmit="return check()" autocomplete="off">
+            <h2 align="center"><strong>create account</strong></h2>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" required ><br>
+            <input type="text" id="username" name="username" class="form-control" placeholder="username" required ><br>
+            <input type="email" id="email" name="email" class="form-control" placeholder="email" required ><br>
+            <input type="password" id="pass1" name="password" class="form-control" placeholder="Password" required ><br>
+            <input type="password" id="pass2" name="passw" class="form-control" placeholder="Re-Type password" required ><br>
+            <input type="text" id="key" name="seckey" pattern="{0-9}[6]" class="form-control" placeholder="6 digit key" required ><br>
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="create">
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="py-4 bg-dark mt-auto text-light flt-foot">
+  <div class="container-fluid" >
+   <div class="d-flex align-items-center justify-content-between small">
+  <p>created by <a href="https://github.io/rabbanimd">Md Rabbani</a> | All Rights reserved &copy; 2020 | <a href="#">TelStore </a> </p>
+   </div>
+  </div>
+</footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
